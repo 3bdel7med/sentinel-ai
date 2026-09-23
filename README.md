@@ -82,4 +82,8 @@ This package is open-source software licensed under the [MIT license](https://ww
 
 ```
 
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 6f37db872dfe09ffe67ccb54f768dc49bdbbafb8
