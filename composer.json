@@ -1,0 +1,28 @@
+{
+    "name": "abdelhmed/sentinel-ai",
+    "description": "An AI-powered exception fixer and error tracker for Laravel using Gemini.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdelhmed",
+            "email": "abdelhmedfthy3702@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abdelhmed\\SentinelAi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Abdelhmed\\SentinelAi\\SentinelServiceProvider"
+            ]
+        }
+    }
+}
