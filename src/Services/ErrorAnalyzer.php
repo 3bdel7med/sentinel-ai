@@ -23,7 +23,7 @@ class ErrorAnalyzer
         $prompt = "You are an expert Laravel developer. An exception occurred:\n" .
                   "Error: {$errorMessage}\n" .
                   "File: {$file} on line {$line}\n" .
-                  "Provide the fix in Arabic and English concisely.";
+                  "Provide the fix in English concisely.";
 
         $aiAnalysis = "Unable to analyze.";
 
@@ -51,7 +51,6 @@ class ErrorAnalyzer
             \Log::error("🔥 Sentinel AI Connection Exception: " . $ex->getMessage());
         }
 
-        // حفظ الخطأ وتحليل الذكاء الاصطناعي في جدول الباكيدج تلقائياً
         try {
             SentinelLog::create([
                 'error_message' => $errorMessage,

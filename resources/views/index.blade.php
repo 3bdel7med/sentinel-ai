@@ -14,18 +14,17 @@
 <div class="flex justify-between items-center mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
     <div>
         <h1 class="text-2xl font-bold text-gray-800">🛡️ Sentinel AI Dashboard</h1>
-        <p class="text-sm text-gray-500 mt-1">مراقبة وتحليل أخطاء التطبيق بواسطة الذكاء الاصطناعي</p>
+        <p class="text-sm text-gray-500 mt-1">Monitoring and analyzing application errors using artificial intelligence.</p>
     </div>
     
     <div class="flex items-center gap-3">
         <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">Laravel Package</span>
         
-        <!-- زرار مسح اللوجز -->
-        <form action="{{ url('sentinel/logs') }}" method="POST" onsubmit="return confirm('هل أنت متأكد من مسح جميع الأخطاء؟');">
+        <form action="{{ url('sentinel/logs') }}" method="POST" onsubmit="return confirm('Are you sure to delete all logs');">
             @csrf
             @method('DELETE')
             <button type="submit" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 text-xs font-semibold px-3 py-2 rounded-lg transition">
-                🗑️ مسح الكل
+                🗑️  Delete All
             </button>
         </form>
     </div>
@@ -41,7 +40,7 @@
                                 {{ $log->error_message }}
                             </span>
                             <p class="text-xs text-gray-500 font-mono">
-                                📁 {{ $log->file_path }} : <span class="text-red-500 font-bold">السطر {{ $log->line_number }}</span>
+                                📁 {{ $log->file_path }} : <span class="text-red-500 font-bold">line {{ $log->line_number }}</span>
                             </p>
                         </div>
                         <span class="text-xs text-gray-400 bg-gray-50 px-2 py-1 rounded">
@@ -52,7 +51,7 @@
                     <!-- AI Analysis Box -->
                     <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 mt-4">
                         <h3 class="font-bold text-slate-700 mb-2 flex items-center gap-2">
-                            <span>🤖</span> تحليل وحل الذكاء الاصطناعي:
+                            <span>🤖</span>   AI fixing :
                         </h3>
                         <div class="text-slate-600 text-sm leading-relaxed whitespace-pre-line font-mono bg-white p-4 rounded border border-slate-100">
                             {!! nl2br(e($log->ai_analysis)) !!}
@@ -61,7 +60,7 @@
                 </div>
             @empty
                 <div class="bg-white text-center py-12 rounded-xl shadow-sm border border-gray-200">
-                    <p class="text-gray-400 text-lg">ممتاز! لا توجد أخطاء مسجلة حتى الآن 🎉</p>
+                    <p class="text-gray-400 text-lg">Exellent , no Error </p>
                 </div>
             @endforelse
         </div>
