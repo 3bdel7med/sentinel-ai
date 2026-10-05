@@ -1,0 +1,54 @@
+{
+    "name": "abdelhmed/sentinel-ai",
+    "description": "AI-powered error dashboard for Laravel: captures exceptions, explains them with Gemini and generates tests on demand.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "errors",
+        "exceptions",
+        "debugging",
+        "ai",
+        "gemini"
+    ],
+    "homepage": "https://github.com/3bdel7med",
+    "authors": [
+        {
+            "name": "Abdelhamed Fathy"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^10.0|^11.0|^12.0",
+        "league/commonmark": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.0|^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abdelhmed\\SentinelAi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Abdelhmed\\SentinelAi\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Abdelhmed\\SentinelAi\\SentinelServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
